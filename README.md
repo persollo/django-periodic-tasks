@@ -93,7 +93,7 @@ from .monday_emails import periodic_task_send_monday_emails
 123, 'Dream big! Work hard!'
 ```
 
-##### To process tasks asynchronously, just add celery or kuyruk decorator:
+##### To process tasks asynchronously, just add [celery](http://www.celeryproject.org/) or [kuyruk](https://github.com/cenkalti/kuyruk) decorator:
 
 ```python
 @kuyruk.task(queue='kuyruk')
