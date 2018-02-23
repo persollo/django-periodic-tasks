@@ -16,6 +16,7 @@ setup(
     description='Periodic tasks app for Django',
     install_requires=[
         'Django>=1.8',
+        'croniter==0.3.16',
     ],
     zip_safe=False
 )
