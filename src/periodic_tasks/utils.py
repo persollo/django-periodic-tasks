@@ -11,7 +11,7 @@ def fetch_periodic_tasks():
     for app in apps.all_models.keys():
         try:
             periodic_tasks_modules[app] = import_module(app+'.periodic_tasks')
-        except ModuleNotFoundError:
+        except Exception:
             pass
     for app, module in periodic_tasks_modules.items():
         namespace = dir(module)
