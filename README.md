@@ -1,6 +1,6 @@
 
 # django-periodic-tasks
-===============
+
 
 Django app to process periodic and pending tasks
 -----------------------------
@@ -21,7 +21,7 @@ Nice tool for generation: https://crontab.guru/
 
 ##### Crontab syntax in short:
 
-A crontab file has five fields for specifying day , date and time followed by the command to be run at that interval.
+A crontab string has five fields for specifying day, date and time followed by the command to be run at that interval.
 
 ```
 *   *   *   *   *
