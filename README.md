@@ -87,7 +87,13 @@ def periodic_task_send_monday_emails(user_id, email_title=None):
 from .monday_emails import periodic_task_send_monday_emails
 ```
 
-##### You can pass arguments tu functions just like you do it normally in Python code
+##### How to run tasks loop:
+
+```bash
+python manage.py periodic_tasks_run
+```
+
+##### You can pass arguments to functions just like you do it normally in Python code
 
 ```bash
 123, 'Dream big! Work hard!'
