@@ -7,13 +7,16 @@ from periodic_tasks.utils import fetch_periodic_tasks
 from periodic_tasks.validators import validate_crontab_string
 
 
-class PeriodicTask(models.Model):
+def tasks_as_choices():
+    for task in fetch_periodic_tasks():
+        yield (task, task)
 
-    TASK_CHOICES = ((task, task) for task in fetch_periodic_tasks())
+
+class PeriodicTask(models.Model):
 
     task = models.CharField(
         max_length=256,
-        choices=TASK_CHOICES,
+        choices=tasks_as_choices(),
     )
     arguments = models.CharField(
         max_length=256,

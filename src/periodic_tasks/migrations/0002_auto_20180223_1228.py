@@ -17,9 +17,4 @@ class Migration(migrations.Migration):
             name='last_run_dt',
             field=models.DateTimeField(blank=True, null=True),
         ),
-        migrations.AlterField(
-            model_name='periodictask',
-            name='task',
-            field=models.CharField(choices=[('persollo.periodic_tasks.periodic_task_test', 'persollo.periodic_tasks.periodic_task_test'), ('persollo.periodic_tasks.periodic_task_test_with_agruments', 'persollo.periodic_tasks.periodic_task_test_with_agruments')], max_length=256),
-        ),
     ]
