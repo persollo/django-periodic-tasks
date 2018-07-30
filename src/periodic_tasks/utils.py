@@ -5,7 +5,6 @@ from django.utils import timezone
 
 
 def fetch_periodic_tasks():
-
     periodic_tasks = []
     periodic_tasks_modules = {}
     for app in apps.all_models.keys():
@@ -52,4 +51,5 @@ def execute_tasks():
             (args, kwargs) = parse_args(task)
             task_method(*args, **kwargs)
             task.set_next_run_timestamp(update=True)
+            task.save()
             print(task.task + ' EXECUTED at ' + str(timezone.localtime()))
