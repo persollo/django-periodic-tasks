@@ -57,4 +57,3 @@ class PeriodicTask(models.Model):
                 self.crontab_string,
                 timezone.localtime()
             ).get_next()
-        return self.save()

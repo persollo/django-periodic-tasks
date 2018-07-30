@@ -1,14 +1,13 @@
-from django.db.models.signals import post_save
+from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
 
 from periodic_tasks.models import PeriodicTask
 
 
-@receiver(post_save, sender=PeriodicTask)
-def set_next_run_timestamp(sender, instance=None, created=False, **kwargs):
+@receiver(pre_save, sender=PeriodicTask)
+def set_next_run_timestamp(sender, instance=None, **kwargs):
     """
-    Signal to set next run after PeriodicTask instance creation
+    Signal to set next run before PeriodicTask instance saving
     """
-    if created:
-        instance.set_next_run_timestamp()
+    instance.set_next_run_timestamp()

@@ -4,7 +4,7 @@ from periodic_tasks import models
 
 
 @admin.register(models.PeriodicTask)
-class CountryAdmin(admin.ModelAdmin):
+class PrediodicTaskAdmin(admin.ModelAdmin):
     exclude = (
         'last_run_dt',
         'next_run_timestamp',
