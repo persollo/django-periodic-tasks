@@ -1,4 +1,5 @@
 import time
+import traceback
 
 from django.core.management.base import BaseCommand
 
@@ -16,7 +17,9 @@ class Command(BaseCommand):
             try:
                 execute_tasks()
                 # TODO: Use success callback function here
-            except Exception:
+            except Exception as e:
                 # TODO: Use error callback function here
+                print(e)
+                traceback.print_exc()
                 pass
             time.sleep(10)
